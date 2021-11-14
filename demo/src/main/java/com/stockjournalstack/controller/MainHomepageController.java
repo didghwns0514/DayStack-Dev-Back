@@ -8,6 +8,7 @@ public class MainHomepageController {
 
     @GetMapping("/")
     public String welcomePage() {
+
         return "index";
     }
 }
