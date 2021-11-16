@@ -9,4 +9,4 @@ services:
     ports:
       - 5551:8080
     volumes:
-      - ./jenkins_home/workspace/DayStack-Back-SpringBoot/build/libs:/deploy
+      - ./build/libs:/deploy
