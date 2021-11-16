@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  spring:
+    container_name: spring-compose
+    build:
+      context: spring-dockerfile
+      dockerfile: Dockerfile
+    ports:
+      - 5551:8080
+    volumes:
+      - ./jenkins_home/workspace/DayStack-Back-SpringBoot/build/libs:/deploy
