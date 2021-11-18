@@ -5,7 +5,7 @@ services:
     container_name: spring-compose
     build:
       context: compose-spring
-      dockerfile: Dockerfile
+      dockerfile: compose-spring/Dockerfile
     ports:
       - 5551:8080
     volumes:
