@@ -18,8 +18,10 @@ cd ..
 echo "Current PWD : $PWD"
 echo "Current files ls : "
 ls
-docker run --name DayStack-Spring-Server -d -p 5551:8080 korshika/daystack-back-spring:latest
+#docker run --name DayStack-Spring-Server -d -p 5551:8080 korshika/daystack-back-spring:latest
 #docker run --name DayStack-Spring-Server -d -p 5551:8080 -v /build/libs:/deploy korshika/daystack-back-spring:latest
+docker run --name DayStack-Spring-Server -d -p 5551:8080 --link mysql-daystack korshika/daystack-back-spring:latest
+
 
 echo ""
 echo "---------------------"
