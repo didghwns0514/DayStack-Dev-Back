@@ -5,7 +5,7 @@ ID=$2
 PW=$3
 
 # Change Directory
-cd compose-spring
+#cd compose-spring
 
 echo "PWD now : $PWD"
 
@@ -36,7 +36,7 @@ echo "NEW_TAG_VER : $NEW_TAG_VER"
 
 # 현재 위치에 존재하는 DOCKER FILE을 사용하여 빌드
 echo "Building image"
-docker build -t $DOCKER_REPOSITORY_NAME:$NEW_TAG_VER .
+docker build --no-cache -t $DOCKER_REPOSITORY_NAME:$NEW_TAG_VER .
 
 # docker hub에 push 하기위해 login
 echo "Logging into Docker-hub"
