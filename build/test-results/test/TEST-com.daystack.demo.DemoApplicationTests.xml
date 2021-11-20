@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.daystack.demo.DemoApplicationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-11-18T22:54:31" hostname="yanghojun-ui-MacBookAir.local" time="0.005">
+<testsuite name="com.daystack.demo.DemoApplicationTests" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-11-19T10:15:34" hostname="yanghojun-ui-MacBookAir.local" time="0.008">
   <properties/>
-  <testcase name="contextLoads()" classname="com.daystack.demo.DemoApplicationTests" time="0.005">
+  <testcase name="contextLoads()" classname="com.daystack.demo.DemoApplicationTests" time="0.008">
     <failure message="java.lang.IllegalStateException: Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
@@ -173,33 +173,35 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at app//com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948)
 	at app//com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818)
 	... 133 more
-Caused by: java.net.UnknownHostException: mysql-daystack
-	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797)
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505)
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364)
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298)
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:133)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.base/java.net.Socket.connect(Socket.java:608)
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156)
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63)
 	... 136 more
 </failure>
   </testcase>
-  <system-out><![CDATA[07:54:25.315 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-07:54:25.332 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-07:54:25.380 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.daystack.demo.DemoApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-07:54:25.393 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.daystack.demo.DemoApplicationTests], using SpringBootContextLoader
-07:54:25.398 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.daystack.demo.DemoApplicationTests]: class path resource [com/daystack/demo/DemoApplicationTests-context.xml] does not exist
-07:54:25.399 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.daystack.demo.DemoApplicationTests]: class path resource [com/daystack/demo/DemoApplicationTestsContext.groovy] does not exist
-07:54:25.399 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.daystack.demo.DemoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-07:54:25.400 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.daystack.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-07:54:25.458 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.daystack.demo.DemoApplicationTests]
-07:54:25.520 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/yanghojun/Library/Mobile Documents/com~apple~CloudDocs/Code_mac/vscode/app_DayStack/DayStack-Back/build/classes/java/main/com/daystack/demo/DemoApplication.class]
-07:54:25.522 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.daystack.demo.DemoApplication for test class com.daystack.demo.DemoApplicationTests
-07:54:25.635 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.daystack.demo.DemoApplicationTests]: using defaults.
-07:54:25.636 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-07:54:25.653 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5bd73d1a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@aec50a1, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2555fff0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@70d2e40b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@120f38e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7a0e1b5e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@702ed190, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@173b9122, org.springframework.test.context.event.EventPublishingTestExecutionListener@7c18432b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7646731d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@70e29e14, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3b1bb3ab, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5a4bef8, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@40bffbca, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2449cff7]
-07:54:25.656 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@499b2a5c testClass = DemoApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@596df867 testClass = DemoApplicationTests, locations = '{}', classes = '{class com.daystack.demo.DemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@c5ee75e, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3e14c16d, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5d1659ea, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5c18016b, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4351c8c3, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@700fb871], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
-07:54:25.844 [Test worker] DEBUG org.springframework.boot.ApplicationServletEnvironment - Activating profiles []
-07:54:25.851 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+  <system-out><![CDATA[19:14:27.781 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+19:14:27.800 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+19:14:27.852 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.daystack.demo.DemoApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+19:14:27.865 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.daystack.demo.DemoApplicationTests], using SpringBootContextLoader
+19:14:27.870 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.daystack.demo.DemoApplicationTests]: class path resource [com/daystack/demo/DemoApplicationTests-context.xml] does not exist
+19:14:27.872 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.daystack.demo.DemoApplicationTests]: class path resource [com/daystack/demo/DemoApplicationTestsContext.groovy] does not exist
+19:14:27.872 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.daystack.demo.DemoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+19:14:27.873 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.daystack.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:14:27.932 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.daystack.demo.DemoApplicationTests]
+19:14:27.996 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/yanghojun/Library/Mobile Documents/com~apple~CloudDocs/Code_mac/vscode/app_DayStack/DayStack-Back/build/classes/java/main/com/daystack/demo/DemoApplication.class]
+19:14:27.998 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.daystack.demo.DemoApplication for test class com.daystack.demo.DemoApplicationTests
+19:14:28.105 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.daystack.demo.DemoApplicationTests]: using defaults.
+19:14:28.106 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+19:14:28.123 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5bd73d1a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@aec50a1, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@2555fff0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@70d2e40b, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@120f38e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7a0e1b5e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@702ed190, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@173b9122, org.springframework.test.context.event.EventPublishingTestExecutionListener@7c18432b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7646731d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@70e29e14, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3b1bb3ab, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5a4bef8, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@40bffbca, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@2449cff7]
+19:14:28.126 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@499b2a5c testClass = DemoApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@596df867 testClass = DemoApplicationTests, locations = '{}', classes = '{class com.daystack.demo.DemoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@c5ee75e, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@3e14c16d, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@5d1659ea, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@5c18016b, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@4351c8c3, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@700fb871], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+19:14:28.324 [Test worker] DEBUG org.springframework.boot.ApplicationServletEnvironment - Activating profiles []
+19:14:28.331 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -209,19 +211,19 @@ Caused by: java.net.UnknownHostException: mysql-daystack
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::       (v2.6.0-SNAPSHOT)
 
-2021-11-19 07:54:26.338  INFO 46358 --- [    Test worker] com.daystack.demo.DemoApplicationTests   : Starting DemoApplicationTests using Java 11.0.12 on yanghojun-ui-MacBookAir.local with PID 46358 (started by yanghojun in /Users/yanghojun/Library/Mobile Documents/com~apple~CloudDocs/Code_mac/vscode/app_DayStack/DayStack-Back)
-2021-11-19 07:54:26.343  INFO 46358 --- [    Test worker] com.daystack.demo.DemoApplicationTests   : No active profile set, falling back to default profiles: default
-2021-11-19 07:54:27.465  INFO 46358 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-11-19 07:54:27.467  INFO 46358 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2021-11-19 07:54:27.483  INFO 46358 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JDBC repository interfaces.
-2021-11-19 07:54:27.507  INFO 46358 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
-2021-11-19 07:54:27.508  INFO 46358 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-19 07:54:27.512  INFO 46358 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
-2021-11-19 07:54:28.629  INFO 46358 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-19 07:54:28.685  INFO 46358 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
-2021-11-19 07:54:28.858  INFO 46358 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-11-19 07:54:29.003  INFO 46358 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-19 07:54:30.139 ERROR 46358 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-11-19 19:14:28.885  INFO 55125 --- [    Test worker] com.daystack.demo.DemoApplicationTests   : Starting DemoApplicationTests using Java 11.0.12 on yanghojun-ui-MacBookAir.local with PID 55125 (started by yanghojun in /Users/yanghojun/Library/Mobile Documents/com~apple~CloudDocs/Code_mac/vscode/app_DayStack/DayStack-Back)
+2021-11-19 19:14:28.887  INFO 55125 --- [    Test worker] com.daystack.demo.DemoApplicationTests   : No active profile set, falling back to default profiles: default
+2021-11-19 19:14:29.986  INFO 55125 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-11-19 19:14:29.989  INFO 55125 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2021-11-19 19:14:30.005  INFO 55125 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JDBC repository interfaces.
+2021-11-19 19:14:30.044  INFO 55125 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-11-19 19:14:30.045  INFO 55125 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-19 19:14:30.050  INFO 55125 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JPA repository interfaces.
+2021-11-19 19:14:31.117  INFO 55125 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-19 19:14:31.173  INFO 55125 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-11-19 19:14:31.340  INFO 55125 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-19 19:14:31.476  INFO 55125 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-19 19:15:02.698 ERROR 55125 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
 
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
@@ -378,19 +380,18 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	... 133 common frames omitted
-Caused by: java.net.UnknownHostException: mysql-daystack: nodename nor servname provided, or not known
-	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
-	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929) ~[na:na]
-	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515) ~[na:na]
-	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298) ~[na:na]
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	... 136 common frames omitted
 
-2021-11-19 07:54:30.170  WARN 46358 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2021-11-19 19:15:02.737  WARN 55125 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
 
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
@@ -547,21 +548,20 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	... 133 common frames omitted
-Caused by: java.net.UnknownHostException: mysql-daystack: nodename nor servname provided, or not known
-	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[na:na]
-	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:929) ~[na:na]
-	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1515) ~[na:na]
-	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:848) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298) ~[na:na]
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	... 136 common frames omitted
 
-2021-11-19 07:54:30.197  INFO 46358 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-11-19 07:54:30.392  INFO 46358 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-19 07:54:31.423 ERROR 46358 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2021-11-19 19:15:02.770  INFO 55125 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-19 19:15:02.974  INFO 55125 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-19 19:15:34.043 ERROR 55125 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
 
 com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
 
@@ -718,25 +718,27 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	... 133 common frames omitted
-Caused by: java.net.UnknownHostException: mysql-daystack
-	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298) ~[na:na]
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	... 136 common frames omitted
 
-2021-11-19 07:54:31.454  WARN 46358 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
-2021-11-19 07:54:31.456 ERROR 46358 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
+2021-11-19 19:15:34.094  WARN 55125 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 08S01
+2021-11-19 19:15:34.095 ERROR 55125 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-2021-11-19 07:54:31.465 ERROR 46358 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-11-19 07:54:31.471  WARN 46358 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
-2021-11-19 07:54:31.497  INFO 46358 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
+2021-11-19 19:15:34.112 ERROR 55125 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-11-19 19:15:34.117  WARN 55125 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
+2021-11-19 19:15:34.144  INFO 55125 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2021-11-19 07:54:31.525 ERROR 46358 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
+2021-11-19 19:15:34.198 ERROR 55125 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.exception.JDBCConnectionException: Unable to open JDBC Connection for DDL execution
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.13.jar:5.3.13]
@@ -906,16 +908,18 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	... 133 common frames omitted
-Caused by: java.net.UnknownHostException: mysql-daystack
-	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298) ~[na:na]
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	... 136 common frames omitted
 
-2021-11-19 07:54:31.537 ERROR 46358 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5bd73d1a] to prepare test instance [com.daystack.demo.DemoApplicationTests@52433946]
+2021-11-19 19:15:34.218 ERROR 55125 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@5bd73d1a] to prepare test instance [com.daystack.demo.DemoApplicationTests@15f861ee]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132) ~[spring-test-5.3.13.jar:5.3.13]
@@ -1088,12 +1092,14 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:948) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:818) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	... 133 common frames omitted
-Caused by: java.net.UnknownHostException: mysql-daystack
-	at java.base/java.net.InetAddress$CachedAddresses.get(InetAddress.java:797) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1505) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1364) ~[na:na]
-	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1298) ~[na:na]
-	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:133) ~[mysql-connector-java-8.0.27.jar:8.0.27]
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242) ~[na:na]
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224) ~[na:na]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[na:na]
+	at java.base/java.net.Socket.connect(Socket.java:608) ~[na:na]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:156) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.27.jar:8.0.27]
 	... 136 common frames omitted
 
