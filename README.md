@@ -10,3 +10,4 @@
 - [참조주소8](https://knight76.tistory.com/entry/aaa-1)
 - [참조주소9](https://stackoverflow.com/questions/32163955/how-to-run-shell-script-on-host-from-docker-container)
 - [참조주소10](https://stackoverflow.com/questions/42108163/get-docker-compose-yml-file-location-from-running-container/63788532)
+- [참조주소11](https://stackoverflow.com/questions/3659602/automating-enter-keypresses-for-bash-script-generating-ssh-keys)
