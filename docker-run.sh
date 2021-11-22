@@ -23,6 +23,8 @@ ls
 #docker run --network shareNetwork-daystack --name DayStack-Spring-Server -d -p 5551:8080 --link mysql-daystack:mysql-daystack korshika/daystack-back-spring:latest
 #docker run --network shareNetwork_daystack --name DayStack-Spring-Server -d -p 5551:8080 --link mysql-daystack korshika/daystack-back-spring:latest
 docker run  --name DayStack-Spring-Server -d -p 5551:8080  \
+  -e MYSQL_USERNAME=$1 \
+  -e MYSQL_PASSWORD=$2 \
   --link mysql-daystack korshika/daystack-back-spring:latest
 
 
