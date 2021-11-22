@@ -25,7 +25,8 @@ ls
 #  -e MYSQL_USERNAME=$1 \
 #  -e MYSQL_PASSWORD=$2 \
 docker run  --name DayStack-Spring-Server -d -p 5551:8080  \
-  --link mysql-daystack korshika/daystack-back-spring:latest
+  korshika/daystack-back-spring:latest
+  #--link mysql-daystack korshika/daystack-back-spring:latest
 
 
 
